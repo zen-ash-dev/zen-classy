@@ -15,22 +15,9 @@
     })();
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="css/main.css" rel="stylesheet">
+  <link href="css/output.css" rel="stylesheet">
 
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Outfit', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
-          colors: {
-            brand: '#3b82f6',
-            borderDark: 'rgba(255,255,255,0.08)'
-          }
-        }
-      }
-    };
     if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js').catch(()=>{});
   </script>
 </head>
