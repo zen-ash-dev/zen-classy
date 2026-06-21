@@ -15,6 +15,10 @@
     })();
   </script>
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com https://docs.google.com https://drive.google.com; connect-src 'self' https://script.google.com; upgrade-insecure-requests; block-all-mixed-content;">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
   <link href="css/output.css" rel="stylesheet">
 
   <script>
@@ -107,7 +111,7 @@
 
         <div class="bg-white/5 border border-blue-500/30 rounded-2xl p-5 mb-6 relative mt-4">
           <span class="absolute -top-3 left-5 bg-blue-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-md shadow-blue-500/20">Step 1: Database</span>
-          <p class="text-xs text-slate-300 mb-3 font-medium leading-relaxed mt-2">Open <a href="https://gemini.google.com" target="_blank" class="text-blue-400 hover:underline font-bold">Google Gemini</a>, paste this exact prompt, and run the code it gives you in a blank Google Sheet. <br><b class="text-red-400">CRITICAL: Click Share on the Google Sheet and add your main Developer Email as an Editor!</b></p>
+          <p class="text-xs text-slate-300 mb-3 font-medium leading-relaxed mt-2">Open <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline font-bold">Google Gemini</a>, paste this exact prompt, and run the code it gives you in a blank Google Sheet. <br><b class="text-red-400">CRITICAL: Click Share on the Google Sheet and add your main Developer Email as an Editor!</b></p>
           
           <div class="relative">
             <textarea id="ai-prompt-text" readonly class="w-full h-24 bg-black/40 border border-white/10 rounded-xl p-3 text-[10px] font-mono text-slate-400 resize-none focus:outline-none custom-scrollbar">I need an Apps Script code that creates a structured Google Sheet to act as a database for my Class Portal. Please write a script that creates the following tabs with these exact column headers in row 1:
@@ -239,7 +243,7 @@ Make the header rows bold and freeze the first row for all tabs.</textarea>
         <div id="peek-loader" class="absolute inset-0 flex items-center justify-center z-20">
           <div class="w-8 h-8 border-[3px] border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
-        <iframe id="peek-iframe" class="w-full h-full relative z-10 border-0 rounded-b-3xl" onload="document.getElementById('peek-loader').classList.add('hidden')" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
+        <iframe id="peek-iframe" class="w-full h-full relative z-10 border-0 rounded-b-3xl" onload="document.getElementById('peek-loader').classList.add('hidden')" sandbox="allow-scripts allow-forms allow-popups"></iframe>
       </div>
     </div>
   </div>

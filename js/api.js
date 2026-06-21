@@ -4,14 +4,21 @@ async function apiCall(action, data = {}) {
   try {
     const token = localStorage.getItem('adminToken');
     const classCode = localStorage.getItem('currentClassCode');
-    
+
+    if (!/^[a-zA-Z0-9_-]+$/.test(action)) {
+      return { success: false, message: "Invalid action." };
+    }
+
     const payload = { action, ...data };
-    
-    if (token) payload.token = token;
+
+    if (token && /^[a-zA-Z0-9_-]+$/.test(token)) payload.token = token;
     if (classCode) payload.classCode = classCode;
 
     const response = await fetch(API_URL, {
       method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 

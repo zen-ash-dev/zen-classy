@@ -1,21 +1,22 @@
 {
-  "name": "Class Portal Workspace",
-  "short_name": "Portal",
-  "description": "Student ecosystem and resource dashboard.",
+  "name": "CSE C Workspace - Class Academic Portal",
+  "short_name": "CSE Portal",
+  "description": "CSE C Class academic portal for notes, attendance, and announcements.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#03030a",
   "theme_color": "#3b82f6",
+  "categories": ["education"],
   "icons": [
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1024px-GitHub_Invertocat_Logo.svg.png",
+      "src": "icon-192.svg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/svg+xml"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1024px-GitHub_Invertocat_Logo.svg.png",
+      "src": "icon-512.svg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg+xml"
     }
   ]
 }

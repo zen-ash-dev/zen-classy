@@ -51,6 +51,7 @@ const loadScript = (url) => new Promise((resolve, reject) => {
   showLoading();
   const s   = document.createElement('script');
   s.src     = url;
+  s.crossOrigin = 'anonymous';
   s.onload  = () => { _loadedScripts.add(url); hideLoading(); resolve(); };
   s.onerror = () => { hideLoading(); reject(new Error(`Failed to load ${url}`)); };
   document.head.appendChild(s);
@@ -62,7 +63,7 @@ const esc = (str) =>
                    .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 
 const attr = (str) =>
-  String(str ?? '').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ').replace(/\r/g,'');
+  String(str ?? '').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;').replace(/\n/g,' ').replace(/\r/g,'');
 
 // ─── TOAST NOTIFICATIONS ─────────────────────────────────────────────
 function showToast(message, type = 'success') {
